@@ -1,0 +1,147 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff; /* Set the general background to white */
+    color: #525457;
+}
+
+h2.text-center {
+    color: #101111;
+    margin-bottom: 2rem;
+    font-weight: bold;
+}
+
+/* Main Nav Tab Styles */
+#mainTab .nav-link {
+    color: #525457;
+    background-color: #f8f9fa; /* Tabs background to the light gray */
+    border: 1px solid #dee2e6;
+    border-bottom: none;
+    border-radius: 0.5rem 0.5rem 0 0;
+    margin-right: 2px;
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    font-weight: bold; /* Make all text bold */
+
+}
+
+.no-padding {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+#mainTab .nav-item:first-child {
+    margin-left: 16px; /* Adjust the value as needed */
+}
+
+#mainTab .nav-link.active {
+    color: #525457;
+    background-color: #f8f9fa; /* Active tab remains white */
+    border-color: #dee2e6 #dee2e6 #fff;
+    z-index: 1;
+}
+
+/* Style for the down arrow icon to indicate dropdown */
+.bi-chevron-down {
+    margin-left: 0.5rem;
+    transition: transform 0.3s ease;
+    
+}
+
+/* Sub Nav Tab Styles */
+#subTab .nav-link {
+    color: #525457;
+    background-color: #f8f9fa; /* Sub-tabs background to the light gray */
+    padding: 0.5rem 1rem;
+    margin-top: -1px;
+    margin-right: 2px;
+    border: 1px solid transparent;
+    border-bottom: 3px solid transparent;
+    font-weight: bold; /* Make all text bold */
+
+}
+
+#subTab .nav-link.active {
+    color: #525457;
+    background-color: #f8f9fa; /* Active sub-tab remains white */
+    border-bottom: 3px solid #be040e;
+}
+
+/* Tab Content Styles */
+.tab-content > .tab-pane {
+    padding-top: 10px;
+    padding-bottom: 70px;
+    padding-left: 0;
+    padding-right: 0;
+    background-color: #f8f9fa;
+    border: 10px solid #f8f9fa;
+    border-top: none;
+    box-sizing: border-box;
+}
+
+/* Styles pour les en-têtes de tableau */
+.table thead th {
+    background-color: #D7263D; /* rouge foncé pour l'arrière-plan des en-têtes de tableau */
+    color: #000000; /* texte noir pour les en-têtes de tableau */
+  }
+  
+  /* Styles pour les lignes de tableau */
+  .table tbody tr {
+    background-color: #FFFFFF; /* fond blanc pour les lignes de tableau */
+  }
+  
+  .table tbody tr:nth-of-type(odd) {
+    background-color: #f2f2f2; /* fond alterné pour les lignes impaires du tableau */
+  }
+  
+  /* Styles pour les boutons dans les actions */
+  .table tbody tr td .btn {
+    margin-right: 0.5rem; /* espace entre les boutons */
+  }
+  .table {
+    margin-top: 10px; /* Espace entre le champ de recherche et le tableau */
+    margin-bottom: 10px;
+  }  
+
+  .btn-add-vehicle {
+    background-color: rgb(3, 20, 177);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 20px; /* Cela crée l'effet de demi-cercle */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    float: right; /* Ajout pour aligner à droite dans un conteneur */
+}
+
+/* Pour le positionnement fixe à droite de la page */
+.btn-add-vehicle-fixed {
+    background-color: purple;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: fixed;
+    right: 20px; /* Espace du bord droit */
+    top: 100px; /* Ajustez selon l'endroit où vous souhaitez le positionner verticalement */
+}
+
+.btn-add-vehicle:hover, .btn-add-vehicle-fixed:hover {
+    background-color: darkviolet; /* Assombrir légèrement le bouton au survol */
+}
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .nav-tabs .nav-link, .nav-tabs .nav-link.active {
+        padding: 0.5rem 1rem;
+    }
+}

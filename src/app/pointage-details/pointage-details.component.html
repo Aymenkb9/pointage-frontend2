@@ -1,0 +1,205 @@
+<div class="container-fluid my-5">
+    <h2 class="text-center mb-4">Détails du pointage</h2>
+
+    <!-- Main Nav tabs -->
+    <ul class="nav nav-tabs" id="mainTab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <a class="nav-link active" id="import-tab" data-bs-toggle="tab" href="#import" role="tab" aria-controls="import" aria-selected="true">
+                Import <i class="bi bi-chevron-down"></i>
+            </a>
+        </li>
+        <!-- Additional main tabs if needed -->
+        
+    </ul>
+          <!-- Main Tab Content -->
+    <div class="tab-content" id="mainTabContent">
+        <div class="tab-pane fade show active" id="import" role="tabpanel" aria-labelledby="import-tab">
+            <!-- Sub Nav tabs for "Import" -->
+            <ul class="nav nav-tabs mt-3" id="subTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link active" id="voitures-tab" data-bs-toggle="tab" href="#voitures" role="tab" aria-controls="voitures" aria-selected="true">Voitures</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="divers-tab" data-bs-toggle="tab" href="#divers" role="tab" aria-controls="divers" aria-selected="true">Divers</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="conteneurs-tab" data-bs-toggle="tab" href="#conteneurs" role="tab" aria-controls="conteneurs" aria-selected="true">Conteneurs</a>
+                </li>
+                <!-- Additional sub tabs if needed -->
+            </ul>
+
+
+    <!-- Main Tab Content -->
+    <div class="tab-content" id="mainTabContent">
+        <div class="tab-pane fade show active" id="import" role="tabpanel" aria-labelledby="voitures-tab">
+            <!-- Sub Nav tabs for "Import" -->
+            <ul class="nav nav-tabs mt-3" id="subTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link active" id="voitures-tab" data-bs-toggle="tab" href="#global" role="tab" aria-controls="voitures" aria-selected="true">Global</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="voitures-tab" data-bs-toggle="tab" href="#détails" role="tab" aria-controls="divers" aria-selected="true">Détails</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="voitures-tab" data-bs-toggle="tab" href="#overland" role="tab" aria-controls="conteneurs" aria-selected="true">Overland</a>
+                </li>
+                <!-- Additional sub tabs if needed -->
+            </ul>
+
+            <!-- Sub Tab Content for "Import" -->
+            <div class="tab-content" id="subTabContent">
+                <div class="tab-pane fade show active" id="global" role="tabpanel" aria-labelledby="voitures-tab">
+                    <button class="btn-add-vehicle" routerLink="/ajouter-pointage"><i class="fas fa-plus"></i> Ajouter une voiture</button>
+
+                    <!-- Tableau pour Voitures (Global) -->
+                    <!-- Ajoutez le premier tableau ici -->
+                    <div class="table-container">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Numéro de connaissement</th>
+                                    <th>Lot</th>
+                                    <th>Marque</th>
+                                    <th>Agent maritime</th>
+                                    <th>Date de pointage</th>
+                                    <th>Provenance</th>
+                                    <th>Client</th>
+                                    <th>Manifesté</th>
+                                    <th>Pointé</th>
+                                    <th>VIN chargé</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Les données du tableau seront injectées ici -->
+                                <tr>
+                                    <td>HDGLINMA054587</td>
+                                    <td>1</td>
+                                    <td>CAC</td>
+                                    <td>U-M-M-U-M-M</td>
+                                    <td>12/03/2024 14:50:54</td>
+                                    <td>MADRAS</td>
+                                    <td>TRANSPORT MARITIME</td>
+                                    <td>49</td>
+                                    <td>1</td>
+                                    <td>10</td>
+                                </tr>
+                                <tr>
+                                    <td>HDGLINMA054587</td>
+                                    <td>1</td>
+                                    <td>CAC</td>
+                                    <td>U-M-M-U-M-M</td>
+                                    <td>13/03/2024 14:25:52</td>
+                                    <td>MADRAS</td>
+                                    <td>EASTERN STAR</td>
+                                    <td>49</td>
+                                    <td>1</td>
+                                    <td>10</td>
+                                </tr>
+                                <!-- Ajoutez plus de lignes selon vos données -->
+                            </tbody>
+                        </table>
+                        <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+
+                    </div>
+            
+            
+                </div>
+
+                <div class="tab-pane fade" id="détails" role="tabpanel" aria-labelledby="divers-tab">
+                    <!-- Tableau pour Détails -->
+                    <!-- Ajoutez le deuxième tableau ici -->
+                    <button class="btn-add-vehicle" routerLink="/ajouter-pointage"><i class="fas fa-plus"></i> Ajouter une voiture</button>
+
+                    <div class="table-container">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Numéro de connaissement</th>
+                                    <th>Lot</th>
+                                    <th>VIN</th>
+                                    <th>Marque</th>
+                                    <th>Modèle</th>
+                                    <th>Agent maritime</th>
+                                    <th>Pointeur</th>
+                                    <th>Date de pointage</th>
+                                    <th>Réserve</th>
+                                    <th>Etat</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Les données du tableau seront injectées ici -->
+                                <tr>
+                                    <td>HDGLINMA054587</td>
+                                    <td>1</td>
+                                    <td>MALGT41DERM072642</td>
+                                    <td>CAC</td>
+                                    <td>CAC</td>
+                                    <td>U-M-M-U-M-M</td>
+                                    <td>admin</td>
+                                    <td>12/03/2024 14:50:54</td>
+                                    <td>Non</td>
+                                    <td>manifesté et pointée</td>
+                                </tr>
+                              
+                                <!-- Ajoutez plus de lignes selon vos données -->
+                            </tbody>
+                        </table>
+                        <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+
+                    </div>
+                
+            
+                </div>
+
+                <div class="tab-pane fade" id="overland" role="tabpanel" aria-labelledby="conteneurs-tab">
+                    <button class="btn-add-vehicle" routerLink="/ajouter-pointage"><i class="fas fa-plus"></i> Ajouter une voiture</button>
+
+                    <!-- Tableau pour Overland -->
+                    <!-- Ajoutez le troisième tableau ici -->
+                    <div class="table-container">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Numéro de connaissement</th>
+                                    <th>Lot</th>
+                                    <th>Désignation</th>
+                                    <th>Quantité</th>
+                                    <th>Poids</th>
+                                    <th>Agent maritime</th>
+                                    <th>Pointeur</th>
+                                    <th>Date de pointage</th>
+                                    <th>Réserve</th>
+                                    <th>Etat</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Les données du tableau seront injectées ici -->
+                               <tr>
+                                 <td></td>
+                                 <td></td>
+                                 <td></td>
+                                 <td></td>
+                                 <td></td>
+                                 <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                                <!-- Ajoutez plus de lignes selon vos données -->
+                            </tbody>
+                        </table>
+                        <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+
+                    </div>
+            
+                </div>
+            </div>
+        </div>
+        <!-- Additional content for main tabs if needed -->
+    </div>
+</div>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/js/bootstrap.bundle.min.js"></script>

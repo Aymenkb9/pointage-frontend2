@@ -1,0 +1,42 @@
+<div class="card border-0 w-100 mb-4">
+    <div class="card-header bg-light pb-3">
+        <h5 class="card-title fw-bold fs-4 mt-3 mb-0">Liste des Escales</h5>
+        <div class="search-container mt-3">
+            <i class="fas fa-search"></i>
+            <input type="text" class="form-control" placeholder="Rechercher par escale">
+        </div>
+    </div>
+    <button class="btn-add-escale" routerLink="/ajouter-escales"><i class="fas fa-plus"></i> Ajouter éscale</button>
+    <div class="table-container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Numéro d'escale</th>
+                    <th>Nom navire</th>
+                    <th>Numéro voyage</th>
+                    <th>Terminal</th>
+                    <th>Agent maritime</th>
+                    <th>Port de provenance</th>
+                    <th>Destination</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let escale of escales">
+                    <td>{{ escale.numEscale }}</td>
+                    <td>{{ escale.navires }}</td>
+                    <td>{{ escale.numVoyage }}</td>
+                    <td>{{ escale.terminal }}</td>
+                    <td>{{ escale.clients }}</td>
+                    <td>{{ escale.connaissement }}</td>
+                    <td>{{ escale.terminal }}</td>
+                    <td>
+                        <button class="btn btn-primary btn-sm">Détails</button>
+                        <button class="btn btn-secondary btn-sm">Modifier</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+    </div>
+</div>

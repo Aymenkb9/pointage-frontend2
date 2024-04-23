@@ -1,0 +1,143 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff; /* Set the general background to white */
+    color: #525457;
+    font-weight: bold; /* Make all text bold */
+}
+
+h2.text-center {
+    color: #101111;
+    margin-bottom: 2rem;
+}
+
+/* Main Nav Tab Styles */
+#mainTab .nav-link {
+    color: #525457;
+    background-color: #f8f9fa; /* Tabs background to the light gray */
+    border: 1px solid #dee2e6;
+    border-bottom: none;
+    border-radius: 0.5rem 0.5rem 0 0;
+    margin-right: 2px;
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.no-padding {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+#mainTab .nav-item:first-child {
+    margin-left: 16px; /* Adjust the value as needed */
+}
+
+#mainTab .nav-link.active {
+    color: #525457;
+    background-color: #f8f9fa; /* Active tab remains white */
+    border-color: #dee2e6 #dee2e6 #fff;
+    z-index: 1;
+}
+
+/* Style for the down arrow icon to indicate dropdown */
+.bi-chevron-down {
+    margin-left: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+/* Sub Nav Tab Styles */
+#subTab .nav-link {
+    color: #525457;
+    background-color: #f8f9fa; /* Sub-tabs background to the light gray */
+    padding: 0.5rem 1rem;
+    margin-top: -1px;
+    margin-right: 2px;
+    border: 1px solid transparent;
+    border-bottom: 3px solid transparent;
+}
+
+#subTab .nav-link.active {
+    color: #525457;
+    background-color: #f8f9fa; /* Active sub-tab remains white */
+    border-bottom: 3px solid #007bff;
+}
+
+/* Tab Content Styles */
+.tab-content > .tab-pane {
+    padding-top: 10px;
+    padding-bottom: 70px;
+    padding-left: 0;
+    padding-right: 0;
+    background-color: #f8f9fa;
+    border: 10px solid #f8f9fa;
+    border-top: none;
+    box-sizing: border-box;
+}
+
+
+/* Card Styles */
+.info-card {
+    background-color: #fff;
+    border: 1px solid #f0f0f0;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+}
+
+.info-card-title {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.info-card-number {
+    font-size: 2.5rem;
+    font-weight: bold; /* Keep numbers bold */
+    color: #007bff;
+    margin-bottom: 0.5rem;
+}
+
+.info-card-footer {
+    font-size: 1rem;
+    color: #6c757d;
+}
+
+.welcome-container {
+    display: flex;
+    justify-content: start; /* Align items to the start of the container */
+    align-items: center;
+}
+
+.welcome-badge {
+    background-color: #1E90FF;
+    color: rgb(11, 2, 126);
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px; /* Increased size for visibility */
+    height: 50px; /* Increased size for visibility */
+    border-radius: 50%;
+    text-align: center;
+    font-size: 20px; /* Adjusted font size for a better fit */
+    margin-right: 20px; /* Added margin for spacing */
+    transform: translateY(-12px)  translateX(10px); /* Déplacer le badge vers le haut */
+}
+
+
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .nav-tabs .nav-link, .nav-tabs .nav-link.active {
+        padding: 0.5rem 1rem;
+    }
+}

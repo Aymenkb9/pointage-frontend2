@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+/* Ajoutez vos styles personnalisés ici */
+  
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+
+/* Styles pour les éléments de la liste de navigation */
+.mat-nav-list {
+  padding: 0;
+}
+
+
+.mat-nav-list button {
+  width: 100%;
+  text-align: left;
+}
+
+/* Styles pour le contenu du mat-drawer-content */
+.mat-drawer-content {
+  padding: 16px;
+}
+
+/* Styliser les boutons */
+ button {
+  margin-left: 8px; /* Espacement entre les boutons */
+  color: white; /* Couleur du texte */
+  background-color: #3f51b5; /* Couleur de fond */
+  border: none; /* Supprimer la bordure */
+  border-radius: 4px; /* Ajouter un arrondi aux coins */
+  padding: 8px 16px; /* Ajouter de l'espace autour du texte */
+  cursor: pointer; /* Ajouter un curseur au survol */
+  transition: background-color 0.3s; /* Transition de couleur au survol */
+}
+
+.mat-toolbar button:hover {
+  background-color: #3949ab; /* Couleur de fond au survol */
+}
+
+/* Styliser les icônes */
+.mat-icon {
+  font-size: 24px; /* Taille de la police des icônes */
+  vertical-align: middle; /* Aligner verticalement */
+}
+
+
+
+.mat-nav-list button {
+  width: 100%; /* Prendre toute la largeur disponible */
+  text-align: left; /* Aligner le texte à gauche */
+  color: #fcfbfb; /* Couleur du texte */
+  background-color: transparent; /* Fond transparent */
+  border: none; /* Supprimer la bordure */
+  padding: 8px 16px; /* Ajouter de l'espace autour du texte */
+  cursor: pointer; /* Ajouter un curseur au survol */
+  transition: background-color 0.3s; /* Transition de couleur au survol */
+}
+
+.mat-nav-list button:hover {
+  background-color: #f0f0f0; /* Couleur de fond au survol */
+}
+
+.mat-icon{
+  color: black;
+}
+
+
+
+
+
+

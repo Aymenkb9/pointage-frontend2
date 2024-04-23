@@ -1,0 +1,157 @@
+
+<div class="container-fluid my-5">
+    <h2 class="text-start mb-4 ">Ajouter une réserve</h2>
+
+<!-- Main Nav tabs -->
+<ul class="nav nav-tabs" id="mainTab" role="tablist">
+<li class="nav-item" role="presentation">
+    <a class="nav-link active" id="import-tab" data-bs-toggle="tab" href="#import" role="tab" aria-controls="import" aria-selected="true">
+        Import <i class="bi bi-chevron-down"></i>
+    </a>
+</li>
+<!-- Additional main tabs if needed -->
+</ul>
+
+<!-- Main Tab Content -->
+<div class="tab-content" id="mainTabContent">
+<div class="tab-pane fade show active" id="import" role="tabpanel" aria-labelledby="import-tab">
+    <!-- Sub Nav tabs for "Import" -->
+    <ul class="nav nav-tabs mt-3" id="subTab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <a class="nav-link active" id="voitures-tab" data-bs-toggle="tab" href="#voitures" role="tab" aria-controls="voitures" aria-selected="true">Voitures</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" id="divers-tab" data-bs-toggle="tab" href="#divers" role="tab" aria-controls="divers" aria-selected="true">Divers</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" id="conteneurs-tab" data-bs-toggle="tab" href="#conteneurs" role="tab" aria-controls="conteneurs" aria-selected="true">Conteneurs</a>
+        </li>
+        <!-- Additional sub tabs if needed -->
+    </ul>
+
+    <!-- Sub Tab Content for "Import" -->
+    <div class="tab-content" id="subTabContent">
+        <div class="tab-pane fade show active" id="voitures" role="tabpanel" aria-labelledby="voitures-tab">
+            <h5 class="mb-4">Pointer un éscale</h5>
+            <div class="row">
+                <!-- Première ligne -->
+                <div class="col-md-4">
+                    <label for="numero_escale">Numéro d'escale *</label>
+                    <input type="text" class="form-control" id="numero_escale" placeholder="Entrez le numéro d'escale">
+                </div>
+                <div class="col-md-4">
+                    <label for="numero_connaissement">Numéro de connaissement *</label>
+                    <input type="text" class="form-control" id="numero_connaissement" placeholder="Entrez le numéro de connaissement">
+                </div>
+                <div class="col-md-4">
+                    <label for="vin">VIN *</label>
+                    <input type="text" class="form-control" id="vin" placeholder="Entrez le VIN">
+                </div>
+                <!-- Deuxième ligne -->
+                <div class="col-md-6">
+                    <label for="marque">Marque</label>
+                    <input type="text" class="form-control" id="marque" placeholder="Entrez la marque">
+                </div>
+                <div class="col-md-6">
+                    <label for="modele">Modèle</label>
+                    <input type="text" class="form-control" id="modele" placeholder="Entrez le modèle">
+                </div>
+                <!-- Troisième ligne -->
+                <div class="col-md-6">
+                    <label for="provenance">Provenance</label>
+                    <input type="text" class="form-control" id="provenance" placeholder="Entrez la provenance">
+                </div>
+                <div class="col-md-6">
+                    <label for="destination">Destination</label>
+                    <input type="text" class="form-control" id="destination" placeholder="Entrez la destination">
+                </div>
+                 <!-- Ajout des deux titres dans la même ligne -->
+                 <div class="d-flex justify-content-between mt-4">
+                    <h6 class="text-start me-3">Accessoires internes manquants</h6>
+                    <h6 class="text-end">Accessoires externes manquants</h6>
+                </div>
+                
+            
+            
+            <!-- Ajout des cases à cocher -->
+            <div class="d-flex align-items-center mt-2">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="accessoires_internes">
+                    <label for="accessoires_internes" class="mb-3 mt-1">ROUE</label>
+                </div>
+               </div>
+              <!-- Section de commentaire -->
+        <div class="mt-3">
+         <h6>Commentaire pour les accessoires</h6>
+                  <textarea class="form-control" rows="3" placeholder="test accessoire comment"></textarea>
+             </div>
+            </div>
+        
+            <div class="d-flex justify-content-between align-items-center mt-3">
+               
+                <!-- Bouton "Ajouter une réserve" avec la couleur rouge -->
+                
+                <!-- Titre du tableau "Réserves" -->
+                <h6>Réserves</h6>
+                <button class="btn btn-danger btn-add" routerLink="/ajouter-reserve"><i class="fas fa-plus"></i> Ajouter une réserve</button>
+
+            </div>
+            
+            <!-- Tableau des réserves -->
+            <div class="table-container mt-2">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Nature de réserve</th>
+                            <th>Zone de réserve</th>
+                            <th>Emplacement de réserve</th>
+                            <!-- Ajoutez d'autres en-têtes selon vos besoins -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Ajoutez des lignes pour les données des réserves ici -->
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <!-- Ajoutez d'autres cellules pour les données des réserves selon vos besoins -->
+                        </tr>
+                        <!-- Ajoutez plus de lignes selon vos données -->
+                    </tbody>
+                </table>
+            </div>
+            
+             <!-- Section de commentaire -->
+        <div class="mt-3">
+            <h6>Commentaire pour les réserves *</h6>
+                     <textarea class="form-control" rows="3" placeholder="test réserve comment"></textarea>
+                </div>
+
+                <div class="button-container mt-4">
+                    <button class="btn-reset custom-btn">Réinitialiser</button>
+                    <button class="btn-add custom-btn">Ajouter</button>
+                </div>
+                
+                
+
+               </div>
+        
+
+
+           
+        
+        
+        
+        
+        
+    </div>
+        <!-- Additional content for "Import" sub tabs if needed -->
+        
+</div>
+<!-- Additional content for main tabs if needed -->
+
+</div>
+</div>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/js/bootstrap.bundle.min.js"></script>
+

@@ -1,0 +1,31 @@
+.breadcrumb {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .breadcrumb-item {
+    display: inline-block;
+    margin-right: 5px;
+  }
+  
+  .breadcrumb-item:last-child {
+    font-weight: bold; /* Optionally make the last item bold */
+  }
+  
+  .breadcrumb-item:not(:last-child):after {
+    content: "›"; /* Use any separator you prefer */
+    margin-left: 5px;
+    margin-right: 5px;
+    color: #999; /* Color of the separator */
+  }
+  
+  .breadcrumb-link {
+    color: #007bff; /* Color of the breadcrumb links */
+    text-decoration: none;
+  }
+  
+  .breadcrumb-link:hover {
+    text-decoration: underline;
+  }
+  
