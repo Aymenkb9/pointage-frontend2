@@ -216,3 +216,15 @@ a.sidebar-link {
 .table tbody tr td .btn {
   margin-right: 0.5rem; /* espace entre les boutons */
 }
+
+.btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    color: #fff;
+  }
+  
+  .btn-danger:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+  }
+  

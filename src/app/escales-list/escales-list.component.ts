@@ -10,4 +10,5 @@ export class EscalesListComponent {
   @ViewChild(MatPaginator) paginatior !: MatPaginator;
 escales: any;
 
+
 }
