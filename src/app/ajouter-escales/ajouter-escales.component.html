@@ -49,24 +49,24 @@
                         <!-- Première ligne -->
                         <div class="col-md-4">
                             <label for="numero_escale">Numéro d'escale *</label>
-                            <input type="text" class="form-control" id="numero_escale" placeholder="Entrez le numéro d'escale">
+                            <input type="text" class="form-control" id="numero_escale" placeholder="Entrez le numéro d'escale" [(ngModel)]="escales.numEscale">
                         </div>
                         <div class="col-md-4">
-                            <label for="numero_connaissement">Nom navire *</label>
-                            <input type="text" class="form-control" id="numero_connaissement" placeholder="Entrez le numéro de connaissement">
+                            <label for="nom_navire">Nom navire *</label>
+                            <input type="text" class="form-control" id="nom_navire" placeholder="Entrez le nom navire" [(ngModel)]="escales.navires">
                         </div>
                         <div class="col-md-4">
                             <label for="vin">Numéro voyage *</label>
-                            <input type="text" class="form-control" id="vin" placeholder="Entrez le VIN">
+                            <input type="text" class="form-control" id="vin" placeholder="Entrez le Numéro voyage" [(ngModel)]="escales.numVoyage">
                         </div>
                         <!-- Deuxième ligne -->
                         <div class="col-md-6">
-                            <label for="marque">Terminal</label>
-                            <input type="text" class="form-control" id="marque" placeholder="Entrez la marque">
+                            <label for="terminal">Terminal</label>
+                            <input type="text" class="form-control" id="terminal" placeholder="Entrez terminal">
                         </div>
                         <div class="col-md-6">
-                            <label for="modele">Agent maritime</label>
-                            <input type="text" class="form-control" id="modele" placeholder="Entrez le modèle">
+                            <label for="agent_maritime">Agent maritime</label>
+                            <input type="text" class="form-control" id="agent_maritime" placeholder="Entrez l'agent maritime" [(ngModel)]="escales.clients">
                         </div>
                         <!-- Troisième ligne -->
                         <div class="col-md-6">
@@ -79,7 +79,7 @@
                         </div>
                         <div class="button-container mt-4">
                             <button class="btn-reset custom-btn">Réinitialiser</button>
-                            <button class="btn-add custom-btn">Ajouter</button>
+                            <button class="btn-add custom-btn" (click)="saveEscale()">Ajouter</button>
                         </div>
                     </div>
                 </div>

@@ -21,7 +21,8 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatBadgeModule } from '@angular/material/badge';
 import { AjouterReserveComponent } from './ajouter-reserve/ajouter-reserve.component';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
-
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,8 +40,17 @@ import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
     AppRoutingModule,
     MatPaginator,
     MatPaginatorModule,
-    MatSidenavModule , MatIconModule , 
-    MatDividerModule ,  MatListModule , MatToolbarModule , RouterOutlet , MatMenuModule, MatBadgeModule
+    MatSidenavModule ,
+     MatIconModule , 
+    MatDividerModule , 
+     MatListModule ,
+      MatToolbarModule , 
+      RouterOutlet , 
+      MatMenuModule, 
+      MatBadgeModule , 
+      HttpClientModule, 
+      FormsModule
+
   ],
   providers: [
     provideClientHydration(),
