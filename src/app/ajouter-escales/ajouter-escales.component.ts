@@ -14,14 +14,28 @@ export class AjouterEscalesComponent {
     numVoyage: '',
     navires: [],
     clients: [],
-    pointage: undefined,
-    connaissement: undefined,
-    terminal: undefined
+    pointage: {
+      id: '',
+      escales: []
+    },
+  connaissement:{
+    id: '',
+    num: 0,
+    escale: []
+  },
+  terminal:{
+    id: '',
+    identif: '',
+    capacite: '',
+    statut: '',
+    escale: [],
+    port:[]
+  },
   };
   constructor(private escaleService: EscaleService) {}
-
-  saveEscale(escale: Escale): void {
-    this.escaleService.saveEscale(escale).subscribe(savedEscale => {
+   
+  saveEscale(): void {
+    this.escaleService.saveEscale(this.escales).subscribe(savedEscale => {
       // Mettez à jour la liste des escales ou effectuez d'autres actions nécessaires
       console.log('Escale saved:', savedEscale);
     });

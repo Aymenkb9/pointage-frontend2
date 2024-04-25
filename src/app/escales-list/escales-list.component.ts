@@ -22,12 +22,7 @@ export class EscalesListComponent implements OnInit {
     this.escaleService.getAllEscales().subscribe(escales => this.escales = escales);
   }
 
-  saveEscale(escale: Escale): void {
-    this.escaleService.saveEscale(escale).subscribe(savedEscale => {
-      // Mettez à jour la liste des escales ou effectuez d'autres actions nécessaires
-      console.log('Escale saved:', savedEscale);
-    });
-  }
+  
 
   updateEscale(id: string, escale: Escale): void {
     this.escaleService.updateEscale(id, escale).subscribe(updatedEscale => {
