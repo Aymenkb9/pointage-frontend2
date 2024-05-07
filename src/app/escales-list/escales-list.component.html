@@ -24,17 +24,18 @@
             <tbody>
                 <tr *ngFor="let escale of escales">
                     <td>{{ escale.numEscale }}</td>
-                    <td>{{ escale.navires }}</td>
+                    <td>{{ escale.navire?.nom }}</td> <!-- Safely accessing 'nom' on 'navires' -->
                     <td>{{ escale.numVoyage }}</td>
-                    <td>{{ escale.terminal }}</td>
-                    <td>{{ escale.clients }}</td>
-                    <td>{{ escale.connaissement }}</td>
-                    <td>{{ escale.terminal }}</td>
+                    <td>{{ escale.terminal?.identif }}</td>
+                    <td>{{ escale.client?.nom }}</td> <!-- Safely accessing 'nom' on 'clients' -->
+                    <td>{{ escale.terminal?.port?.provenance }}</td>
+                    <td>{{ escale.terminal?.statut }}</td>
                     <td>
                         <button class="btn btn-primary btn-sm">Détails</button>
                         <button class="btn btn-secondary btn-sm">Modifier</button>
                     </td>
                 </tr>
+                
             </tbody>
         </table>
 

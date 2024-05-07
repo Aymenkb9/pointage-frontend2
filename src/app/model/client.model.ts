@@ -8,7 +8,7 @@ export interface Client {
     ice: string;
     typeClient: TypeClient; // Supposons que vous ayez déjà défini l'interface TypeClient
     active: boolean;
-    escale: Escale; // Supposons que vous ayez déjà défini l'interface Escale
-    createdAt: Date;
-    updatedAt: Date;
+    escale: Escale[]; // Supposons que vous ayez déjà défini l'interface Escale
+    //createdAt: Date;
+    //updatedAt: Date;
 }

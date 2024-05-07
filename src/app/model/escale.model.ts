@@ -9,8 +9,8 @@ export interface Escale {
     numEscale: number;
     numVoyage: string;
     pointage: Pointage; 
-    navires: Navire[]; 
-    clients: Client[]; 
+    navire: Navire; 
+    client: Client; 
     connaissement: Connaissement; 
     terminal: Terminal; 
 }

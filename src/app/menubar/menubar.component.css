@@ -1,73 +1,119 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
-/* Ajoutez vos styles personnalisés ici */
-  
+html, body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+.mat-drawer-container, .mat-drawer-content, .mat-nav-list {
+  height: 100%;
+}
+ 
+.mat-toolbar {
+  background-color: #3949ab;
+  color: white;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.mat-toolbar button {
+  margin: 0 8px;
+}
+
+.mat-icon-button {
+  color: white;
+}
+
 .example-spacer {
   flex: 1 1 auto;
 }
 
-
-/* Styles pour les éléments de la liste de navigation */
-.mat-nav-list {
-  padding: 0;
+button.mat-menu-item {
+  color: #333; /* Couleur du texte pour les items de menu */
 }
 
+.mat-drawer {
+  width: 250px;
+  border-right: 1px solid #ddd;
+}
+
+.mat-nav-list .mat-list-item {
+  border-bottom: 1px solid #eee;
+}
 
 .mat-nav-list button {
-  width: 100%;
-  text-align: left;
-}
-
-/* Styles pour le contenu du mat-drawer-content */
-.mat-drawer-content {
-  padding: 16px;
-}
-
-/* Styliser les boutons */
- button {
-  margin-left: 8px; /* Espacement entre les boutons */
-  color: white; /* Couleur du texte */
-  background-color: #3f51b5; /* Couleur de fond */
-  border: none; /* Supprimer la bordure */
-  border-radius: 4px; /* Ajouter un arrondi aux coins */
-  padding: 8px 16px; /* Ajouter de l'espace autour du texte */
-  cursor: pointer; /* Ajouter un curseur au survol */
-  transition: background-color 0.3s; /* Transition de couleur au survol */
-}
-
-.mat-toolbar button:hover {
-  background-color: #3949ab; /* Couleur de fond au survol */
-}
-
-/* Styliser les icônes */
-.mat-icon {
-  font-size: 24px; /* Taille de la police des icônes */
-  vertical-align: middle; /* Aligner verticalement */
-}
-
-
-
-.mat-nav-list button {
-  width: 100%; /* Prendre toute la largeur disponible */
-  text-align: left; /* Aligner le texte à gauche */
-  color: #fcfbfb; /* Couleur du texte */
-  background-color: transparent; /* Fond transparent */
-  border: none; /* Supprimer la bordure */
-  padding: 8px 16px; /* Ajouter de l'espace autour du texte */
-  cursor: pointer; /* Ajouter un curseur au survol */
-  transition: background-color 0.3s; /* Transition de couleur au survol */
+  color: #666;
+  text-transform: uppercase;
+  font-weight: 500;
+  background-color: transparent;
 }
 
 .mat-nav-list button:hover {
-  background-color: #f0f0f0; /* Couleur de fond au survol */
+  background-color: #dedede;
 }
 
-.mat-icon{
-  color: black;
+.mat-drawer-content {
+  padding: 20px;
+  background-color: white;
+  min-height: calc(100vh - 64px); /* Hauteur ajustée en fonction de la barre d'outils */
 }
 
+button {
+  background-color: #3949ab;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  transition: background-color 0.3s;
+}
 
+button:hover {
+  background-color: #303f9f;
+}
 
+.mat-icon-button[aria-hidden="false"] {
+  position: relative;
+}
 
+.mat-badge {
+  background-color: #f44336; /* Rouge pour les notifications importantes */
+}
 
+.mat-badge-content {
+  color: white;
+  font-weight: 500;
+}
+
+@media (max-width: 600px) {
+  .mat-drawer {
+    width: 100%;
+  }
+
+  .mat-toolbar {
+    padding: 0 16px;
+  }
+
+  .mat-drawer-content {
+    padding: 10px;
+  }
+}
+/* Styliser spécifiquement les boutons Dashboard et Pointage */
+.mat-nav-list button.dashboard, .mat-nav-list button.pointage {
+  background-color: transparent; /* Fond transparent pour fusionner avec l'arrière-plan */
+  color: #666; /* Couleur de texte pour une meilleure visibilité */
+}
+
+/* Modifier les icônes pour Dashboard et Pointage pour correspondre au style général */
+.mat-nav-list button.dashboard mat-icon, .mat-nav-list button.pointage mat-icon {
+  color: #3949ab; /* Bleu pour correspondre à la barre d'outils */
+  font-size: 24px; /* Assurer une taille d'icône appropriée */
+  vertical-align: middle; /* Aligner verticalement les icônes avec le texte si nécessaire */
+}
+
+/* Hover effects for buttons */
+.mat-nav-list button.dashboard:hover, .mat-nav-list button.pointage:hover {
+  background-color: #e0e0e0; /* Léger arrière-plan gris au survol pour indication */
+}
 
