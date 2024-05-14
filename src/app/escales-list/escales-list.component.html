@@ -31,7 +31,7 @@
                     <td>{{ escale.terminal?.port?.provenance }}</td>
                     <td>{{ escale.terminal?.statut }}</td>
                     <td>
-                        <button class="btn btn-primary btn-sm">Détails</button>
+                        <button class="btn btn-primary btn-sm" [routerLink]="['/pointage-details', escale.navire?.id]">Détails</button>
                         <button class="btn btn-secondary btn-sm">Modifier</button>
                     </td>
                 </tr>
@@ -41,6 +41,6 @@
 
         <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
     </div>
-    <button class="btn btn-danger btn-sm" routerLink="/pointage-details">Pointage Details</button>
+<!-- Example where 'escaleId' is a property of the component -->
 
 </div>

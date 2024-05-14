@@ -42,7 +42,7 @@
                 </div>
                 <div class="col-md-4">
                     <label for="nom_navire">Nom navire *</label>
-                    <input type="text" class="form-control" id="nom_navire" placeholder="Entrez le nom navire" [(ngModel)]="escales.navire">
+                    <input type="text" class="form-control" id="nom_navire" placeholder="Entrez le nom navire" [(ngModel)]="escales.navire.nom">
                 </div>
                 <div class="col-md-4">
                     <label for="vin">Numéro voyage *</label>
@@ -51,20 +51,20 @@
                 <!-- Deuxième ligne -->
                 <div class="col-md-6">
                     <label for="terminal">Terminal</label>
-                    <input type="text" class="form-control" id="terminal" placeholder="Entrez terminal" [(ngModel)]="escales.terminal">
+                    <input type="text" class="form-control" id="terminal" placeholder="Entrez terminal" [(ngModel)]="escales.terminal.identif">
                 </div>
                 <div class="col-md-6">
                     <label for="agent_maritime">Agent maritime</label>
-                    <input type="text" class="form-control" id="agent_maritime" placeholder="Entrez l'agent maritime" [(ngModel)]="escales.client">
+                    <input type="text" class="form-control" id="agent_maritime" placeholder="Entrez l'agent maritime" [(ngModel)]="escales.client.nom">
                 </div>
                 <!-- Troisième ligne -->
                 <div class="col-md-6">
                     <label for="provenance">Provenance</label>
-                    <input type="text" class="form-control" id="provenance" placeholder="Entrez la provenance" [(ngModel)]="escales.terminal">
+                    <input type="text" class="form-control" id="provenance" placeholder="Entrez la provenance" [(ngModel)]="escales.terminal.port.provenance">
                 </div>
                 <div class="col-md-6">
                     <label for="destination">Destination</label>
-                    <input type="text" class="form-control" id="destination" placeholder="Entrez la destination" [(ngModel)]="escales.terminal">
+                    <input type="text" class="form-control" id="destination" placeholder="Entrez la destination" [(ngModel)]="escales.terminal.port.destination">
                 </div>
                 <div class="button-container mt-4">
                     <button class="btn-reset custom-btn">Réinitialiser</button>

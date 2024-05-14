@@ -44,7 +44,7 @@ export class AjouterEscalesComponent {
   connaissement:{
     id: '',
     num: 0,
-    escale: []
+    escaleId: ''
   },
   terminal:{
     id: '',
@@ -63,14 +63,14 @@ export class AjouterEscalesComponent {
   constructor(private escaleService: EscaleService) {}
    
   saveEscale(): void {
-
-    var test = {
-     id: "ecd63fbd-d497-4bf5-8438-1ad2ab6e202e",
-     numEscale: 0
-  };
-    this.escaleService.saveEscale(test).subscribe(savedEscale => {
-      // Mettez à jour la liste des escales ou effectuez d'autres actions nécessaires
-      console.log('Escale saved:', savedEscale);
-    });
-  }
-}
+    this.escaleService.saveEscale(this.escales).subscribe(
+      savedEscale => {
+        console.log('Escale saved:', savedEscale);
+        // Additional actions like navigating away or showing a success message
+      },
+      error => {
+        console.error('Failed to save escale:', error);
+        // Handle errors, show user feedback
+      }
+    );
+  } }

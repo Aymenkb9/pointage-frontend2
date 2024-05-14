@@ -19,7 +19,7 @@ export class EscaleService {
     return this.http.get<Escale>(`${this.baseUrl}/escale/${id}`);
   }
 
-  saveEscale(escale: any): Observable<Escale> {
+  saveEscale(escale: Escale): Observable<Escale> {
     return this.http.post<Escale>(`${this.baseUrl}/saveEscale`, escale);
   }
 

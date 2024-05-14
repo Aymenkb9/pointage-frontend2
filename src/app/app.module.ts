@@ -23,6 +23,8 @@ import { AjouterReserveComponent } from './ajouter-reserve/ajouter-reserve.compo
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { NavireComponent } from './navire/navire.component';
+import { TerminaleComponent } from './terminale/terminale.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +35,9 @@ import { FormsModule } from '@angular/forms';
     MenubarComponent,
     PointageDetailsComponent,
     AjouterReserveComponent,
-    BreadcrumbComponent
+    BreadcrumbComponent,
+    NavireComponent,
+    TerminaleComponent
   ],
   imports: [
     BrowserModule,

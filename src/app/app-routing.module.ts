@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent, data: { breadcrumb: 'Dashboard' } },
   { path: 'ajouter-pointage', component: AjouterPointageComponent, data: { breadcrumb: 'Ajouter Pointage' } },
   { path: 'escales-list', component: EscalesListComponent, data: { breadcrumb: 'Liste des Escales' } },
-  { path: 'pointage-details', component: PointageDetailsComponent, data: { breadcrumb: 'Détails du Pointage' } },
+  { path: 'pointage-details/:id', component: PointageDetailsComponent, data: { breadcrumb: 'Détails du Pointage' } }, // Updated path
   { path : 'ajouter-escales', component : AjouterEscalesComponent, data: { breadcrumb: 'Ajouter Escales' } },
   { path : 'ajouter-reserve', component : AjouterReserveComponent, data: { breadcrumb: 'Ajouter Réserve' } },
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' }

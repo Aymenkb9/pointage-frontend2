@@ -53,51 +53,45 @@
 
                     <!-- Tableau pour Voitures (Global) -->
                     <!-- Ajoutez le premier tableau ici -->
-                    <div class="table-container">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>Numéro de connaissement</th>
-                                    <th>Lot</th>
-                                    <th>Marque</th>
-                                    <th>Agent maritime</th>
-                                    <th>Date de pointage</th>
-                                    <th>Provenance</th>
-                                    <th>Client</th>
-                                    <th>Manifesté</th>
-                                    <th>Pointé</th>
-                                    <th>VIN chargé</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <!-- Les données du tableau seront injectées ici -->
-                                <tr>
-                                    <td>HDGLINMA054587</td>
-                                    <td>1</td>
-                                    <td>CAC</td>
-                                    <td>U-M-M-U-M-M</td>
-                                    <td>12/03/2024 14:50:54</td>
-                                    <td>MADRAS</td>
-                                    <td>TRANSPORT MARITIME</td>
-                                    <td>49</td>
-                                    <td>1</td>
-                                    <td>10</td>
-                                </tr>
-                                <tr>
-                                    <td>HDGLINMA054587</td>
-                                    <td>1</td>
-                                    <td>CAC</td>
-                                    <td>U-M-M-U-M-M</td>
-                                    <td>13/03/2024 14:25:52</td>
-                                    <td>MADRAS</td>
-                                    <td>EASTERN STAR</td>
-                                    <td>49</td>
-                                    <td>1</td>
-                                    <td>10</td>
-                                </tr>
+                    <div *ngIf="escale">
+                        <h2>Détails de l'Escale: {{ escale.id }}</h2>
+                        <div class="table-container">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Numéro de connaissement</th>
+                                        <th>Lot</th>
+                                        <th>Marque</th>
+                                        <th>Agent maritime</th>
+                                        <th>Date de pointage</th>
+                                        <th>Provenance</th>
+                                        <th>Client</th>
+                                        <th>Manifesté</th>
+                                        <th>Pointé</th>
+                                        <th>VIN chargé</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Assuming 'navire' within 'escale' contains an array 'voitures' -->
+                                    <tr *ngFor="let voiture of escale.navire.voitures">
+                                        <td>{{ escale.connaissement?.num }}</td>
+                                        <td>{{ voiture.lot }}</td>
+                                        <td>{{ voiture.marque }}</td>
+                                        <td>{{ escale.client?.typeClient?.libelle }}</td>
+                                        <td>{{ voiture.datePointage | date:'short' }}</td>
+                                        <td>{{ escale.terminal?.port?.provenance }}</td>
+                                        <td>{{ escale.client?.typeClient?.libelle }}</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>{{ voiture.vin }}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
                                 <!-- Ajoutez plus de lignes selon vos données -->
-                            </tbody>
-                        </table>
+                         
                         <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
 
                     </div>
@@ -109,7 +103,8 @@
                     <!-- Tableau pour Détails -->
                     <!-- Ajoutez le deuxième tableau ici -->
                     <button class="btn-add-vehicle" routerLink="/ajouter-pointage"><i class="fas fa-plus"></i> Ajouter une voiture</button>
-
+                    <div *ngIf="escale">
+                        <h2>Détails de l'Escale: {{ escale.id }}</h2>
                     <div class="table-container">
                         <table class="table">
                             <thead>
@@ -128,22 +123,24 @@
                             </thead>
                             <tbody>
                                 <!-- Les données du tableau seront injectées ici -->
-                                <tr>
-                                    <td>HDGLINMA054587</td>
-                                    <td>1</td>
-                                    <td>MALGT41DERM072642</td>
-                                    <td>CAC</td>
-                                    <td>CAC</td>
-                                    <td>U-M-M-U-M-M</td>
-                                    <td>admin</td>
-                                    <td>12/03/2024 14:50:54</td>
-                                    <td>Non</td>
-                                    <td>manifesté et pointée</td>
+                                <tr *ngFor="let voiture of escale.navire.voitures">
+                                    <td>{{ escale.connaissement?.num }}</td>
+                                    <td>{{ voiture.lot }}</td>
+                                    <td>{{ voiture.vin }}</td>
+                                    <td>{{ voiture.marque }}</td>
+                                    <td>{{ voiture.model }}</td>
+                                    <td>{{ escale.client?.typeClient?.libelle }}</td>
+                                    <td></td>
+                                    <td>{{ voiture.datePointage | date:'short' }}</td>
+                                    <td></td>
+                                    <td>{{ voiture.etat }}</td>
                                 </tr>
                               
                                 <!-- Ajoutez plus de lignes selon vos données -->
                             </tbody>
                         </table>
+                        </div>
+                        </div>
                         <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
 
                     </div>
@@ -156,15 +153,17 @@
 
                     <!-- Tableau pour Overland -->
                     <!-- Ajoutez le troisième tableau ici -->
+                    <div *ngIf="escale">
+                        <h2>Détails de l'Escale: {{ escale.id }}</h2>
                     <div class="table-container">
                         <table class="table">
                             <thead>
                                 <tr>
                                     <th>Numéro de connaissement</th>
                                     <th>Lot</th>
-                                    <th>Désignation</th>
-                                    <th>Quantité</th>
-                                    <th>Poids</th>
+                                    <th>VIN</th>
+                                    <th>Marque</th>
+                                    <th>Modèle</th>
                                     <th>Agent maritime</th>
                                     <th>Pointeur</th>
                                     <th>Date de pointage</th>
@@ -175,17 +174,17 @@
                             </thead>
                             <tbody>
                                 <!-- Les données du tableau seront injectées ici -->
-                               <tr>
-                                 <td></td>
-                                 <td></td>
-                                 <td></td>
-                                 <td></td>
-                                 <td></td>
-                                 <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <tr *ngFor="let voiture of escale.navire.voitures">
+                                    <td>{{ escale.connaissement?.num }}</td>
+                                    <td>{{ voiture.lot }}</td>
+                                    <td>{{ voiture.vin }}</td>
+                                    <td>{{ voiture.marque }}</td>
+                                    <td>{{ voiture.model }}</td>
+                                    <td>{{ escale.client?.typeClient?.libelle }}</td>
+                                    <td></td>
+                                    <td>{{ voiture.datePointage | date:'short' }}</td>
+                                    <td></td>
+                                    <td>{{ voiture.etat }}</td>
                                 <td></td>
                             </tr>
                                 <!-- Ajoutez plus de lignes selon vos données -->

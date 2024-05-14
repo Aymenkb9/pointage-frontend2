@@ -11,6 +11,7 @@ import { EscaleService } from './escales.service';
 export class EscalesListComponent implements OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   escales: Escale[] = [];
+escale: any;
 
   constructor(private escaleService: EscaleService) {}
    
