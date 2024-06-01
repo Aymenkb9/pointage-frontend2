@@ -3,7 +3,7 @@ import { Voiture } from "./voiture.model";
 export interface Navire {
     id: string;
     nom: string;
-    Capacite: number;
+    capacite: number;
     compagnie: string;
     tonnage: number;
     statut: string; // ou utilisez le type Enum Statut_Navire si nécessaire

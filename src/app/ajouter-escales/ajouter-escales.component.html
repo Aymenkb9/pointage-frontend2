@@ -38,36 +38,48 @@
                 <!-- Première ligne -->
                 <div class="col-md-4">
                     <label for="numero_escale">Numéro d'escale *</label>
-                    <input type="text" class="form-control" id="numero_escale" placeholder="Entrez le numéro d'escale" [(ngModel)]="escales.numEscale">
+                    <input type="text" class="form-control" id="numero_escale" placeholder="Entrez le numéro d'escale" [(ngModel)]="escale.numEscale">
                 </div>
                 <div class="col-md-4">
                     <label for="nom_navire">Nom navire *</label>
-                    <input type="text" class="form-control" id="nom_navire" placeholder="Entrez le nom navire" [(ngModel)]="escales.navire.nom">
+                    <input type="text" class="form-control" id="nom_navire" placeholder="Entrez le nom navire" [(ngModel)]="escale.nomNavire">
                 </div>
                 <div class="col-md-4">
                     <label for="vin">Numéro voyage *</label>
-                    <input type="text" class="form-control" id="vin" placeholder="Entrez le Numéro voyage" [(ngModel)]="escales.numVoyage">
+                    <input type="text" class="form-control" id="vin" placeholder="Entrez le Numéro voyage" [(ngModel)]="escale.numVoyage">
                 </div>
                 <!-- Deuxième ligne -->
                 <div class="col-md-6">
                     <label for="terminal">Terminal</label>
-                    <input type="text" class="form-control" id="terminal" placeholder="Entrez terminal" [(ngModel)]="escales.terminal.identif">
+                    <input type="text" class="form-control" id="terminal" placeholder="Entrez terminal" [(ngModel)]="escale.identifTerminal">
                 </div>
                 <div class="col-md-6">
                     <label for="agent_maritime">Agent maritime</label>
-                    <input type="text" class="form-control" id="agent_maritime" placeholder="Entrez l'agent maritime" [(ngModel)]="escales.client.nom">
+                    <input type="text" class="form-control" id="agent_maritime" placeholder="Entrez l'agent maritime" [(ngModel)]="escale.nomClient">
                 </div>
                 <!-- Troisième ligne -->
                 <div class="col-md-6">
                     <label for="provenance">Provenance</label>
-                    <input type="text" class="form-control" id="provenance" placeholder="Entrez la provenance" [(ngModel)]="escales.terminal.port.provenance">
+                    <input type="text" class="form-control" id="provenance" placeholder="Entrez la provenance" [(ngModel)]="escale.provenance">
                 </div>
                 <div class="col-md-6">
-                    <label for="destination">Destination</label>
-                    <input type="text" class="form-control" id="destination" placeholder="Entrez la destination" [(ngModel)]="escales.terminal.port.destination">
+                    <label for="statutTerminal">Statut du terminal</label>
+                    <select class="form-control" id="statutTerminal" [(ngModel)]="escale.statutTerminal">
+                        <option value="OCCUPE">OCCUPE</option>
+                        <option value="DISPONIBLE">DISPONIBLE</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label for="statutNavire">Statut du navire</label>
+                    <select class="form-control" id="statutNavire" [(ngModel)]="escale.statutNavire">
+                        <option value="EN_MER">EN_MER</option>
+                        <option value="EN_ESCALE">EN_ESCALE</option>
+                        <option value="EN_ATTENTE">EN_ATTENTE</option>
+                        <!-- Ajoutez d'autres options si nécessaire -->
+                    </select>
                 </div>
                 <div class="button-container mt-4">
-                    <button class="btn-reset custom-btn">Réinitialiser</button>
+                    <button class="btn-reset custom-btn" (click)="resetEscale()">Réinitialiser</button>
                     <button class="btn-add custom-btn" (click)="saveEscale()">Ajouter</button>
                 </div>
             </div>

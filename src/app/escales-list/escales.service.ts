@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Escale } from '../model/escale.model';
+import { SaveEscaleDTO } from '../model/saveescale.model';
 
 @Injectable({
   providedIn: 'root'
@@ -19,10 +20,10 @@ export class EscaleService {
     return this.http.get<Escale>(`${this.baseUrl}/escale/${id}`);
   }
 
-  saveEscale(escale: Escale): Observable<Escale> {
-    return this.http.post<Escale>(`${this.baseUrl}/saveEscale`, escale);
+  saveEscale(escale: SaveEscaleDTO): Observable<SaveEscaleDTO> {
+    return this.http.post<SaveEscaleDTO>(`${this.baseUrl}/saveEscale`, escale);
   }
-
+  
   updateEscale(id: string, escale: Escale): Observable<Escale> {
     return this.http.put<Escale>(`${this.baseUrl}/updateEscale/${id}`, escale);
   }

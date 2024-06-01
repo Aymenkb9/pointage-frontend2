@@ -5,6 +5,8 @@ import { Terminal } from '../model/terminal.model';
 import { Pointage } from '../model/pointage.model';
 
 export interface Escale {
+    statutNavire: string;
+    voitures: import("c:/Users/aymen/POINTAGE-FRONTEND2/src/app/model/voiture.model").Voiture[];
     id: string;
     numEscale: number;
     numVoyage: string;

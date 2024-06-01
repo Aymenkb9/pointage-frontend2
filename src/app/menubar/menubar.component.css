@@ -65,55 +65,26 @@ button {
   color: white;
   border: none;
   border-radius: 4px;
-  padding: 10px 20px;
-  transition: background-color 0.3s;
+  padding: 5px 20px;
 }
 
 button:hover {
   background-color: #303f9f;
 }
 
-.mat-icon-button[aria-hidden="false"] {
-  position: relative;
-}
 
-.mat-badge {
-  background-color: #f44336; /* Rouge pour les notifications importantes */
-}
 
-.mat-badge-content {
-  color: white;
-  font-weight: 500;
-}
+
+
+
 
 @media (max-width: 600px) {
   .mat-drawer {
     width: 100%;
   }
 
-  .mat-toolbar {
-    padding: 0 16px;
-  }
 
-  .mat-drawer-content {
-    padding: 10px;
-  }
-}
-/* Styliser spécifiquement les boutons Dashboard et Pointage */
-.mat-nav-list button.dashboard, .mat-nav-list button.pointage {
-  background-color: transparent; /* Fond transparent pour fusionner avec l'arrière-plan */
-  color: #666; /* Couleur de texte pour une meilleure visibilité */
-}
 
-/* Modifier les icônes pour Dashboard et Pointage pour correspondre au style général */
-.mat-nav-list button.dashboard mat-icon, .mat-nav-list button.pointage mat-icon {
-  color: #3949ab; /* Bleu pour correspondre à la barre d'outils */
-  font-size: 24px; /* Assurer une taille d'icône appropriée */
-  vertical-align: middle; /* Aligner verticalement les icônes avec le texte si nécessaire */
-}
-
-/* Hover effects for buttons */
-.mat-nav-list button.dashboard:hover, .mat-nav-list button.pointage:hover {
-  background-color: #e0e0e0; /* Léger arrière-plan gris au survol pour indication */
+ 
 }
 

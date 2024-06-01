@@ -21,4 +21,7 @@ export class PointagesService {
     return this.http.get<Escale>(`${this.baseUrl}/escale/${id}`);
   }
 
+  deleteVoiture(id: string): Observable<void> {
+    return this.http.delete<void>(`${this.baseUrl}/deleteVoiture/${id}`);
+  }
 }

@@ -25,6 +25,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { NavireComponent } from './navire/navire.component';
 import { TerminaleComponent } from './terminale/terminale.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { DeleteConfirmationDialogComponent } from './delete-confirmation-dialog/delete-confirmation-dialog.component';
+import { MatTabsModule } from '@angular/material/tabs';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +44,8 @@ import { TerminaleComponent } from './terminale/terminale.component';
     AjouterReserveComponent,
     BreadcrumbComponent,
     NavireComponent,
-    TerminaleComponent
+    TerminaleComponent,
+    DeleteConfirmationDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -53,8 +61,11 @@ import { TerminaleComponent } from './terminale/terminale.component';
       MatMenuModule, 
       MatBadgeModule , 
       HttpClientModule, 
-      FormsModule
-
+      FormsModule,
+      MatTableModule,
+      MatCardModule,
+      MatFormFieldModule,
+      MatTabsModule
   ],
   providers: [
     provideClientHydration(),

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { Escale } from '../model/escale.model';
+import { MatSnackBar } from '@angular/material/snack-bar'; // Importer MatSnackBar
 import { EscaleService } from '../escales-list/escales.service';
-import { Port } from '../model/port.model';
+import { SaveEscaleDTO } from '../model/saveescale.model';
 
 @Component({
   selector: 'app-ajouter-escales',
@@ -9,68 +9,48 @@ import { Port } from '../model/port.model';
   styleUrls: ['./ajouter-escales.component.css']
 })
 export class AjouterEscalesComponent {
-  escales : Escale = {
-    id: '',
+  escale: SaveEscaleDTO = {
     numEscale: 0,
     numVoyage: '',
-    navire: {
-      id: '',
-      nom: '',
-      Capacite: 0,
-      compagnie: '',
-      tonnage: 0,
-      statut: '',
-      voitures: [],
-      escaleId: ''
-    },
-    client: {
-      id: '',
-      nom: '',
-      contact: '',
-      ice: '',
-      typeClient: {
-        id: '',
-        code: '',
-        libelle: '',
-        clients: []
-      },
-      active: false,
-      escale: [],
-    },
-    pointage: {
-      id: '',
-      escales: []
-    },
-  connaissement:{
-    id: '',
-    num: 0,
-    escaleId: ''
-  },
-  terminal:{
-    id: '',
-    identif: '',
-    capacite: '',
-    statut: '',
-    escale: [],
-    port:{
-      id: '',
-      provenance: '',
-      destination: '',
-      terminals: []
-    },
-  },
+    nomNavire: '',
+    identifTerminal: '',
+    nomClient: '', // Ajout du champ pour le nom du client
+    provenance: '',
+    statutTerminal: 'OCCUPE', // Initialisez avec une valeur par défaut
+    statutNavire: 'EN_ATTENTE' // Champ pour le statut du navire
   };
-  constructor(private escaleService: EscaleService) {}
-   
+
+  constructor(private escaleService: EscaleService, private snackBar: MatSnackBar) {} // Injecter MatSnackBar
+
   saveEscale(): void {
-    this.escaleService.saveEscale(this.escales).subscribe(
+    this.escaleService.saveEscale(this.escale).subscribe(
       savedEscale => {
         console.log('Escale saved:', savedEscale);
-        // Additional actions like navigating away or showing a success message
+        this.openSnackBar('Escale ajoutée avec succès', 'Fermer'); // Afficher la notification
       },
       error => {
         console.error('Failed to save escale:', error);
-        // Handle errors, show user feedback
+        // Gérer les erreurs, afficher les retours utilisateur
       }
     );
-  } }
+  }
+
+  resetEscale(): void {
+    this.escale = {
+      numEscale: 0,
+      numVoyage: '',
+      nomNavire: '',
+      identifTerminal: '',
+      nomClient: '', 
+      provenance: '',
+      statutTerminal: 'OCCUPE', 
+      statutNavire: 'EN_ATTENTE' 
+    };
+  }
+
+  openSnackBar(message: string, action: string): void {
+    this.snackBar.open(message, action, {
+      duration: 4000, // Durée de la notification en millisecondes
+    });
+  }
+}

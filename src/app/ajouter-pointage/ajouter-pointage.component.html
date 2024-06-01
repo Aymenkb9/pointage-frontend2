@@ -127,9 +127,21 @@
                      <textarea class="form-control" rows="3" placeholder="test réserve comment"></textarea>
                 </div>
 
+                <div class="col-md-6">
+                    <label for="etatVoiture">État de la voiture</label>
+                    <select class="form-control" id="etatVoiture" [(ngModel)]="voitureData.etat">
+                        <option value="EN_ATTENTE">EN_ATTENTE</option>
+                        <option value="MANIFESTE_ET_POINTE">MANIFESTE_ET_POINTE</option>
+                        <option value="ANNULER">ANNULER</option>
+                        <option value="EN_COUR">EN_COUR</option>
+                        <!-- Ajoutez d'autres options si nécessaire -->
+                    </select>
+                </div>
+                
+
                 <div class="button-container mt-4">
                     <button class="btn-reset custom-btn">Réinitialiser</button>
-                    <button class="btn-add custom-btn">Ajouter</button>
+                    <button class="btn-add custom-btn" (click)="saveVoiture()">Ajouter</button>
                 </div>
                 
                 

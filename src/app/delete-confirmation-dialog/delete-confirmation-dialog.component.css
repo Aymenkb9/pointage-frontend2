@@ -1,0 +1,47 @@
+/* Styles spécifiques au composant de dialogue de confirmation de suppression */
+.delete-confirmation-dialog {
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.delete-confirmation-dialog h1 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.delete-confirmation-dialog p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.delete-confirmation-dialog .mat-dialog-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px; /* Ajoute de l'espace entre les boutons */
+
+}
+
+.delete-confirmation-dialog button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.delete-confirmation-dialog button.mat-button {
+  font-size: 14px;
+}
+
+.delete-confirmation-dialog button.mat-button.cancel-button {
+  background-color: #ddd;
+}
+
+.delete-confirmation-dialog button.mat-button.delete-button {
+  background-color: #ff6347;
+  color: #fff;
+}
