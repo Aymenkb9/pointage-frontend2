@@ -42,8 +42,15 @@
             <ng-container matColumnDef="actions">
                 <th mat-header-cell *matHeaderCellDef>Actions</th>
                 <td mat-cell *matCellDef="let escale">
-                    <button class="btn btn-primary btn-sm" [routerLink]="['/pointage-details', escale.navire?.id]">Détails</button>
-                    <button class="btn btn-danger btn-sm" (click)="deleteEscale(escale.id)">Delete</button>
+                    <button class="btn btn-primary btn-sm" *ngIf="escale && escale.id && escale.navire && escale.navire.id" 
+                    [routerLink]="['/pointage-details', escale.id]" 
+                    [queryParams]="{ navireId: escale.navire.id }">
+                Détails
+            </button>
+            
+                    
+                    
+                                          <button class="btn btn-danger btn-sm" (click)="deleteEscale(escale.id)">Delete</button>
                 </td>
             </ng-container>
 

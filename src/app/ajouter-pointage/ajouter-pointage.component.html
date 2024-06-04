@@ -50,11 +50,11 @@
                 <!-- Deuxième ligne -->
                 <div class="col-md-6">
                     <label for="marque">Marque</label>
-                    <input type="text" class="form-control" id="marque" placeholder="Entrez la marque">
+                    <input type="text" class="form-control" id="marque" placeholder="Entrez la marque" [(ngModel)]="voitureData.marque">
                 </div>
                 <div class="col-md-6">
                     <label for="modele">Modèle</label>
-                    <input type="text" class="form-control" id="modele" placeholder="Entrez le modèle">
+                    <input type="text" class="form-control" id="modele" placeholder="Entrez le modèle" [(ngModel)]="voitureData.model">
                 </div>
                 <!-- Troisième ligne -->
                 <div class="col-md-6">
@@ -65,6 +65,11 @@
                     <label for="destination">Destination</label>
                     <input type="text" class="form-control" id="destination" placeholder="Entrez la destination">
                 </div>
+                <div class="col-md-4">
+                    <label for="lot">Numéro de lot *</label>
+                    <input type="text" class="form-control" id="lot" placeholder="Entrez le numéro de lot" [(ngModel)]="voitureData.lot">
+                </div>
+                
                  <!-- Ajout des deux titres dans la même ligne -->
                  <div class="d-flex justify-content-between mt-4">
                     <h6 class="text-start me-3">Accessoires internes manquants</h6>
@@ -140,7 +145,7 @@
                 
 
                 <div class="button-container mt-4">
-                    <button class="btn-reset custom-btn">Réinitialiser</button>
+                    <button class="btn-reset custom-btn" (click)="resetForm()">Réinitialiser</button>
                     <button class="btn-add custom-btn" (click)="saveVoiture()">Ajouter</button>
                 </div>
                 

@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar'; // Importer MatSnackBar
 import { EscaleService } from '../escales-list/escales.service';
 import { SaveEscaleDTO } from '../model/saveescale.model';
+import { Escale } from '../model/escale.model';
 
 @Component({
   selector: 'app-ajouter-escales',
@@ -9,6 +10,8 @@ import { SaveEscaleDTO } from '../model/saveescale.model';
   styleUrls: ['./ajouter-escales.component.css']
 })
 export class AjouterEscalesComponent {
+   // Ajouter un EventEmitter pour émettre les détails de l'escale
+   @Output() escaleAdded: EventEmitter<Escale> = new EventEmitter<Escale>();
   escale: SaveEscaleDTO = {
     numEscale: 0,
     numVoyage: '',

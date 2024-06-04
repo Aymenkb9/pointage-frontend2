@@ -35,29 +35,28 @@
                 <div class="tab-pane fade show active" id="voitures" role="tabpanel" aria-labelledby="voitures-tab">
                     <h5 class="mb-4">Pointer un éscale</h5>
                     <div class="row">
-                        <!-- Première ligne -->
                         <div class="col-md-4">
-                            <label for="numero_escale">Nature de réserve *</label>
-                            <input type="text" class="form-control" id="numero_escale" placeholder="Entrez la nature de réserve">
+                          <label for="nature">Nature de réserve *</label>
+                          <input type="text" class="form-control" id="nature" [(ngModel)]="reserveData.nature" placeholder="Entrez la nature de réserve">
                         </div>
                         <div class="col-md-4">
-                            <label for="numero_connaissement">Zone de réserve *</label>
-                            <input type="text" class="form-control" id="numero_connaissement" placeholder="Entrez la zone de réserve">
+                          <label for="zoneReserve">Zone de réserve *</label>
+                          <input type="text" class="form-control" id="zoneReserve" [(ngModel)]="reserveData.zoneReserve" placeholder="Entrez la zone de réserve">
                         </div>
                         <div class="col-md-4">
-                            <label for="vin">Emplacement de réserve *</label>
-                            <input type="text" class="form-control" id="vin" placeholder="Entrez l'Emplacement">
+                          <label for="emplaceReserve">Emplacement de réserve *</label>
+                          <input type="text" class="form-control" id="emplaceReserve" [(ngModel)]="reserveData.emplaceReserve" placeholder="Entrez l'Emplacement">
                         </div>
+                      </div>
                        
                        
                         <div class="button-container mt-4">
-                            <button class="btn-reset custom-btn">Réinitialiser</button>
-                            <button class="btn-add custom-btn">Ajouter</button>
+                            <button class="btn-reset custom-btn" (click)="resetForm()">Réinitialiser</button>
+                            <button class="btn-add custom-btn" (click)="ajouterReserve()">Ajouter</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
     </div>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/js/bootstrap.bundle.min.js"></script>

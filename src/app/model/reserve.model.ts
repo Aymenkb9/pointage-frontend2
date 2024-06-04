@@ -6,5 +6,4 @@ export interface Reserve {
     zoneReserve: string;
     emplaceReserve: string;
 
-    voiture: Voiture; // Supposons que vous ayez déjà défini l'interface Voiture
 }

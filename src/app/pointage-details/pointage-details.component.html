@@ -50,9 +50,13 @@
             <div class="tab-content mt-3" id="subTabContentVoitures">
                 <div class="tab-pane fade show active" id="global" role="tabpanel" aria-labelledby="global-tab">
                     <!-- Bouton Ajouter une voiture -->
-                    <button class="btn-add-vehicle" [routerLink]="['/ajouter-pointage']" [queryParams]="{ navireId: escale?.navire?.id }">
-                        <i class="fas fa-plus"></i> Ajouter une voiture
-                      </button>
+                    <button class="btn-add-vehicle" 
+                    [routerLink]="['/ajouter-pointage']" 
+                    [queryParams]="{ escaleId: escale?.id, navireId: escale?.navire?.id }" 
+                    *ngIf="escale && escale.id && escale.navire && escale.navire.id">
+                Ajouter un pointage
+            </button>
+                                  
                                           <!-- Tableau pour Global -->
                     <mat-card *ngIf="escale">
                         <h2 class="mat-h2">Détails de l'Escale: {{ escale.id }}</h2>
@@ -73,7 +77,7 @@
                                 </ng-container>
                                 <ng-container matColumnDef="agentMaritime">
                                     <th mat-header-cell *matHeaderCellDef>Agent maritime</th>
-                                    <td mat-cell *matCellDef="let voiture">{{ escale.client?.typeClient?.libelle }}</td>
+                                    <td mat-cell *matCellDef="let voiture">{{ escale.client?.nom }}</td>
                                 </ng-container>
                                 <ng-container matColumnDef="datePointage">
                                     <th mat-header-cell *matHeaderCellDef>Date de pointage</th>
@@ -85,7 +89,7 @@
                                 </ng-container>
                                 <ng-container matColumnDef="client">
                                     <th mat-header-cell *matHeaderCellDef>Client</th>
-                                    <td mat-cell *matCellDef="let voiture">{{ escale.client?.typeClient?.libelle }}</td>
+                                    <td mat-cell *matCellDef="let voiture">{{ escale.client?.nom }}</td>
                                 </ng-container>
                                 <ng-container matColumnDef="manifeste">
                                     <th mat-header-cell *matHeaderCellDef>Manifesté</th>
@@ -119,8 +123,10 @@
                 <div class="tab-pane fade" id="détails" role="tabpanel" aria-labelledby="détails">
                     <!-- Tableau pour Détails -->
                     <!-- Ajoutez le deuxième tableau ici -->
-                    <button class="btn-add-vehicle" routerLink="/ajouter-pointage"><i class="fas fa-plus"></i> Ajouter une voiture</button>
-                    <mat-card *ngIf="escale">
+                    <button class="btn-add-vehicle" [routerLink]="['/ajouter-pointage']" [queryParams]="{ navireId: escale?.navire?.id }" *ngIf="escale && escale.navire && escale.navire.id">
+                        Ajouter un pointage
+                      </button>
+                                          <mat-card *ngIf="escale">
                         <h2 class="mat-h2">Détails de l'Escale: {{ escale.id }}</h2>
                         <div class="table-container">
                             <table mat-table [dataSource]="voituresDataSource" class="mat-elevation-z8">
@@ -143,7 +149,7 @@
                                 </ng-container>
                                 <ng-container matColumnDef="modele">
                                     <th mat-header-cell *matHeaderCellDef>Modèle</th>
-                                    <td mat-cell *matCellDef="let voiture">{{ voiture.modele }}</td>
+                                    <td mat-cell *matCellDef="let voiture">{{ voiture.model }}</td>
                                 </ng-container>
                                 <ng-container matColumnDef="agentMaritime">
                                     <th mat-header-cell *matHeaderCellDef>Agent maritime</th>
@@ -209,7 +215,7 @@
                                 </ng-container>
                                 <ng-container matColumnDef="modele">
                                     <th mat-header-cell *matHeaderCellDef>Modèle</th>
-                                    <td mat-cell *matCellDef="let voiture">{{ voiture.modele }}</td>
+                                    <td mat-cell *matCellDef="let voiture">{{ voiture.model }}</td>
                                 </ng-container>
                                 <ng-container matColumnDef="agentMaritime">
                                     <th mat-header-cell *matHeaderCellDef>Agent maritime</th>

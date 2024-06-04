@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Voiture } from '../model/voiture.model';
 import { Escale } from '../model/escale.model';
+import { Reserve } from '../model/reserve.model';
 @Injectable({
   providedIn: 'root'
 })
@@ -18,4 +19,8 @@ export class AjouterPointageService {
   getEscaleById(id: string): Observable<Escale> {
     return this.http.get<Escale>(`${this.baseUrl}/escale/${id}`);
   }
+    // Méthode pour récupérer les réserves depuis votre serveur
+    getReserves(): Observable<Reserve[]> {
+      return this.http.get<Reserve[]>(this.baseUrl);
+    }
 }
