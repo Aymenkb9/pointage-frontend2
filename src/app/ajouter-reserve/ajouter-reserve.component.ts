@@ -1,4 +1,4 @@
-// Composant
+// ajouter-reserve.component.ts
 import { Component } from '@angular/core';
 import { Reserve } from '../model/reserve.model';
 import { AjouterReserveService } from './ajouter-reserve.service';
@@ -25,7 +25,7 @@ export class AjouterReserveComponent {
       vin: '',
       marque: '',
       model: '',
-      datePointage: new Date,
+      datePointage: new Date(),
       etat: '',
       navire: {
         id: '',
@@ -35,25 +35,26 @@ export class AjouterReserveComponent {
         tonnage: 0,
         statut: '',
         voitures: [],
-        escaleId: ''
+        escaleId: ''  // Assurez-vous d'ajouter escaleId ici
       },
       reserves: []
-    } // Assurez-vous que vous avez les données correctes pour la voiture
+    }
   };
 
-  constructor(private ajouterReserveService: AjouterReserveService ,     private route: ActivatedRoute,
+  constructor(
+    private ajouterReserveService: AjouterReserveService,
+    private route: ActivatedRoute
   ) {}
 
   ngOnInit() {
     this.route.queryParams.subscribe((params: Params) => {
-      const escaleId = params['escaleId']; // Récupérer l'ID de l'escale à partir des paramètres de l'URL
+      const escaleId = params['escaleId'];
       if (escaleId) {
         this.getEscaleById(escaleId);
       } else {
-        console.error('ID de l\'escale non défini.');
+        console.error("ID de l'escale non défini.");
       }
     });
-
   }
 
   getEscaleById(escaleId: string): void {
@@ -61,12 +62,15 @@ export class AjouterReserveComponent {
       escale => {
         this.escale = escale;
         // Utilisez les détails de l'escale dans votre logique ici
-        this.reserveData.voiture.id = escale.voitureId; // Assigner l'ID de la voiture de l'escale
-
+        if (escale.voitures && escale.voitures.length > 0) {
+          this.reserveData.voiture.id = escale.voitures[0].id; // Assigner l'ID de la voiture de l'escale
+          this.reserveData.voiture.navire.escaleId = escaleId; // Assigner l'ID de l'escale à l'ID de l'escale du navire
+        }
       },
-      error => console.error('Erreur lors de la récupération de l\'escale :', error)
+      error => console.error("Erreur lors de la récupération de l'escale :", error)
     );
   }
+
   ajouterReserve(): void {
     this.ajouterReserveService.ajouterReserve(this.reserveData).subscribe(
       response => {
@@ -74,7 +78,7 @@ export class AjouterReserveComponent {
         this.resetForm();
       },
       error => {
-        console.error('Erreur lors de l\'ajout de la réserve:', error);
+        console.error("Erreur lors de l'ajout de la réserve:", error);
       }
     );
   }
@@ -91,7 +95,7 @@ export class AjouterReserveComponent {
         vin: '',
         marque: '',
         model: '',
-        datePointage: new Date,
+        datePointage: new Date(),
         etat: '',
         navire: {
           id: '',
@@ -101,7 +105,7 @@ export class AjouterReserveComponent {
           tonnage: 0,
           statut: '',
           voitures: [],
-          escaleId: ''
+          escaleId: '' // Ajoutez cette ligne ici aussi
         },
         reserves: []
       }
